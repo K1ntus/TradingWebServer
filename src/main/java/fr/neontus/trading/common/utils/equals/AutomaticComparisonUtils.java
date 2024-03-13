@@ -1,4 +1,4 @@
-package fr.neontus.trading.common.equals;
+package fr.neontus.trading.common.utils.equals;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

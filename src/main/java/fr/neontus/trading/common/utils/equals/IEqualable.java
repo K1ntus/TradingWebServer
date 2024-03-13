@@ -1,4 +1,4 @@
-package fr.neontus.trading.common.equals;
+package fr.neontus.trading.common.utils.equals;
 
 public interface IEqualable 
 {
