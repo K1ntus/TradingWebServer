@@ -54,10 +54,9 @@ public class TimeField extends AData
 	}
 
 	@Override
-	public Object deserialize(String str) {
+	public AData deserialize(String str) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	
 }
