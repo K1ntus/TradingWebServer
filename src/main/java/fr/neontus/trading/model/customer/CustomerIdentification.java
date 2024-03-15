@@ -4,10 +4,14 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonRootName;
 
 import fr.neontus.trading.common.utils.equals.Equalable;
+import fr.neontus.trading.common.utils.equals.IEqualable;
+import fr.neontus.trading.common.utils.stringify.APrintable;
+import fr.neontus.trading.common.utils.stringify.Printable;
 
 @JsonRootName("customerId")
-public class CustomerIdentification {
+public class CustomerIdentification extends APrintable implements IEqualable {
 
+	@Printable
 	@Equalable
 	private String name;
 	

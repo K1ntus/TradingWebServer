@@ -1,43 +1,26 @@
 package fr.neontus.trading.model.asset;
 
 import fr.neontus.trading.common.utils.equals.Equalable;
-import fr.neontus.trading.common.utils.equals.IEqualable;
 import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.AData;
 import fr.neontus.trading.model.common.ISingleDataHolder;
 
-public class AssetQuantity extends AData implements IEqualable, ISingleDataHolder<Integer>{
-	public static final AssetQuantity EmptyAssetQuantity = new AssetQuantity(0);
+public class AssetExchange extends AData implements ISingleDataHolder<String>
+{
+	public static final String __INVALID_EXCHANGE_PLATFORM = "No Platform";
 	
 	@Equalable
 	@Printable
-	private int _quantity;
-	
-	public AssetQuantity(int quantity)
+	private String exchange;
+
+	public AssetExchange()
 	{
-		quantity = 0;
-		if (quantity > 0)
-		{
-			this._quantity = quantity;
-		}
+		this(__INVALID_EXCHANGE_PLATFORM);
 	}
 	
-	public Integer value()
+	public AssetExchange(String str)
 	{
-		return this._quantity;
-	}
-	
-	public void increment()
-	{
-		this._quantity++;
-	}
-	
-	public void decrement()
-	{
-		if (this._quantity > 0)
-		{
-			this._quantity--;
-		}
+		this.exchange = str;
 	}
 	
 	@Override
@@ -63,4 +46,10 @@ public class AssetQuantity extends AData implements IEqualable, ISingleDataHolde
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public String value() {
+		return exchange;
+	}
+
 }

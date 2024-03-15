@@ -1,43 +1,29 @@
 package fr.neontus.trading.model.asset;
 
 import fr.neontus.trading.common.utils.equals.Equalable;
-import fr.neontus.trading.common.utils.equals.IEqualable;
 import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.AData;
 import fr.neontus.trading.model.common.ISingleDataHolder;
 
-public class AssetQuantity extends AData implements IEqualable, ISingleDataHolder<Integer>{
-	public static final AssetQuantity EmptyAssetQuantity = new AssetQuantity(0);
-	
+public class AssetSector extends AData implements ISingleDataHolder<EAssetSector>
+{
 	@Equalable
 	@Printable
-	private int _quantity;
+	private EAssetSector sector;
 	
-	public AssetQuantity(int quantity)
+	public AssetSector()
 	{
-		quantity = 0;
-		if (quantity > 0)
-		{
-			this._quantity = quantity;
-		}
+		this(EAssetSector.UNDEFINED);
 	}
 	
-	public Integer value()
+	public AssetSector(EAssetSector sector)
 	{
-		return this._quantity;
+		this.sector = sector;
 	}
 	
-	public void increment()
+	public EAssetSector value()
 	{
-		this._quantity++;
-	}
-	
-	public void decrement()
-	{
-		if (this._quantity > 0)
-		{
-			this._quantity--;
-		}
+		return this.sector;
 	}
 	
 	@Override

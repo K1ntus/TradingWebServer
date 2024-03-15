@@ -1,45 +1,33 @@
 package fr.neontus.trading.model.asset;
 
 import fr.neontus.trading.common.utils.equals.Equalable;
-import fr.neontus.trading.common.utils.equals.IEqualable;
 import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.AData;
 import fr.neontus.trading.model.common.ISingleDataHolder;
 
-public class AssetQuantity extends AData implements IEqualable, ISingleDataHolder<Integer>{
-	public static final AssetQuantity EmptyAssetQuantity = new AssetQuantity(0);
+public class AssetVolume extends AData implements ISingleDataHolder<Long>
+{
+	public static final long __UNDEFINED_VOLUME = 0L;
 	
 	@Equalable
 	@Printable
-	private int _quantity;
+	private long volume;
 	
-	public AssetQuantity(int quantity)
+	public AssetVolume()
 	{
-		quantity = 0;
-		if (quantity > 0)
-		{
-			this._quantity = quantity;
-		}
+		this(__UNDEFINED_VOLUME);
 	}
 	
-	public Integer value()
+	public AssetVolume(long volume)
 	{
-		return this._quantity;
+		this.volume = volume;
 	}
 	
-	public void increment()
+	public Long value()
 	{
-		this._quantity++;
+		return volume;
 	}
-	
-	public void decrement()
-	{
-		if (this._quantity > 0)
-		{
-			this._quantity--;
-		}
-	}
-	
+
 	@Override
 	public String getData() {
 		// TODO Auto-generated method stub

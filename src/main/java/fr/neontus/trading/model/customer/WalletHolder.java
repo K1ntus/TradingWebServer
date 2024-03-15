@@ -7,13 +7,16 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 
 import fr.neontus.trading.common.utils.equals.Equalable;
 import fr.neontus.trading.common.utils.equals.IEqualable;
+import fr.neontus.trading.common.utils.stringify.APrintable;
+import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.UniqueIdentifier;
 import fr.neontus.trading.model.customer.exception.NoWalletException;
 import fr.neontus.trading.model.customer.exception.UninitializedWalletException;
 import fr.neontus.trading.model.customer.exception.WalletAlreadyLoggedException;
 
-public class WalletHolder implements IEqualable 
+public class WalletHolder extends APrintable implements IEqualable
 {
+	@Printable
 	@Equalable
 	private Map<UniqueIdentifier, Wallet> wallets;
 
