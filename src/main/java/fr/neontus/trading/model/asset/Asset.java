@@ -3,10 +3,13 @@ package fr.neontus.trading.model.asset;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import fr.neontus.trading.common.utils.equals.Equalable;
 import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.AData;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class Asset extends AData {
 
 	@Equalable

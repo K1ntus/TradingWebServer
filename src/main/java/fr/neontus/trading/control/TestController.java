@@ -8,11 +8,14 @@ import fr.neontus.trading.control.routes.IndexRoutes;
 import fr.neontus.trading.control.routes.SummaryRoutes;
 
 @RestController
-public class TestController {
+public class TestController 
+{
 
+	
 
 	@GetMapping("/")
-	public String index() {
+	public String index() 
+	{
 		return IndexRoutes.processRouteIndex();
 	}
 	

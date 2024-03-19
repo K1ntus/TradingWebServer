@@ -1,11 +1,14 @@
 package fr.neontus.trading.model.asset;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import fr.neontus.trading.common.utils.equals.Equalable;
 import fr.neontus.trading.common.utils.equals.IEqualable;
 import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.AData;
 import fr.neontus.trading.model.common.ISingleDataHolder;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class AssetQuantity extends AData implements IEqualable, ISingleDataHolder<Integer>{
 	public static final AssetQuantity EmptyAssetQuantity = new AssetQuantity(0);
 	

@@ -1,10 +1,13 @@
 package fr.neontus.trading.model.asset;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import fr.neontus.trading.common.utils.equals.Equalable;
 import fr.neontus.trading.common.utils.stringify.Printable;
 import fr.neontus.trading.model.common.AData;
 import fr.neontus.trading.model.common.ISingleDataHolder;
 
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 public class AssetExchange extends AData implements ISingleDataHolder<String>
 {
 	public static final String __INVALID_EXCHANGE_PLATFORM = "No Platform";
